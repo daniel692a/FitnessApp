@@ -27,4 +27,8 @@
     margin-top: 100px;
     margin-bottom: 80px;
     height: 60px;
+    transition: 0.5s;
+}
+.Fitness-Add:hover{
+    transform: scale(0.7);
 }
