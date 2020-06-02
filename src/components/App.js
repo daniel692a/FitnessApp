@@ -1,13 +1,17 @@
 import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Exercises from "../pages/Exercises";
-import ExerciseNew from "../pages/ExercisesNew";
+import ExerciseNew from "../pages/ExerciseNew";
+import NotFound from '../pages/NotFound'
 
-export default function App() {
-    return (
+const App = () => (
       <BrowserRouter>
-        <Route path="/exercise" component={Exercises} />
-        <Route path="/exercise/new" component={ExerciseNew} />
+        <Switch>
+          <Route exact path="/exercise" component={Exercises} />
+          <Route exact path="/exercise/new" component={ExerciseNew} />
+          <Route component={NotFound}/>
+        </Switch>
       </BrowserRouter>
-    );
-}
+)
+
+export default App
